@@ -1,28 +1,36 @@
-// Scroll Reveal
-document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
-
-    const revealSection = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("animate__animated", "animate__fadeInUp");
-                observer.unobserve(entry.target);
-            }
-        });
-    };
-
-    const sectionObserver = new IntersectionObserver(revealSection, {
-        root: null,
-        threshold: 0.2,
-    });
-
-    sections.forEach(section => {
-        sectionObserver.observe(section);
+// Smooth Scrolling for Navbar Links
+document.querySelectorAll('.nav-link').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
     });
 });
 
-// Contact Form Alert
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("Message sent successfully!");
+// Fun Animation on Scroll (Fade-in Effect)
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate__fadeInUp');
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.grid-container div').forEach(card => {
+    observer.observe(card);
+});
+
+// Interactive Hover Effect for Cards
+document.querySelectorAll('.skill-card, .experience-card, .project-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'scale(1.05)';
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'scale(1)';
+    });
+});
+
+// Modal Open Animation
+document.getElementById('hireModal').addEventListener('show.bs.modal', () => {
+    document.querySelector('.modal-content').classList.add('animate__zoomIn');
 });

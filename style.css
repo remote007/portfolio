@@ -1,65 +1,55 @@
 /* General */
 body {
   font-family: 'Poppins', sans-serif;
-  background: #0B132B;
-  color: #E4C580;
+  background: linear-gradient(to right, #F6E6C2, #d6a502);
+  color: #5E4F31;
 }
 
-/* Navbar */
-.navbar {
-  background: rgba(11, 19, 43, 0.9);
-}
-.navbar-brand {
-  font-size: 1.5rem;
-}
-.navbar-nav .nav-link {
-  color: #E4C580 !important;
-  transition: 0.3s;
-}
-.navbar-nav .nav-link:hover {
-  color: #18A999 !important;
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
-/* Home */
-#home {
-  height: 100vh;
-  background: linear-gradient(135deg, #0B132B, #1E215A);
-  color: white;
-}
-#home h1 {
-  font-size: 3rem;
-}
-.btn-primary {
-  background: #18A999;
-  border: none;
+/* Cards */
+.skill-card, .experience-card, .project-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px #E3B23C;
   transition: 0.3s;
 }
-.btn-primary:hover {
-  background: #E4C580;
+.skill-card:hover, .experience-card:hover, .project-card:hover {
+  box-shadow: 0 0 15px #FFD700;
 }
 
-/* Contact */
-#contact {
-  background: #1E215A;
-  padding: 50px;
-}
-.contact-form {
-  max-width: 500px;
-  margin: auto;
-}
-form input, form textarea {
-  margin-bottom: 15px;
-  padding: 12px;
-}
-form button {
-  width: 100%;
-  padding: 10px;
-  font-size: 1.2rem;
-  background: #18A999;
-  color: white;
-  border: none;
+/* Neon Buttons */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.3);
+  color: #5E4F31;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
   transition: 0.3s;
 }
-form button:hover {
-  background: #E4C580;
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Modal */
+.glass-modal {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.collapse , .navbar-collapse,.navbar-nav,.nav-item{
+  color: black;
+  justify-content: center;
+  text-align: center;
 }
