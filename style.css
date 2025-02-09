@@ -1,79 +1,65 @@
-/* General Styles */
+/* General */
 body {
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+  background: #0B132B;
+  color: #E4C580;
 }
 
-/* Navbar Styling */
+/* Navbar */
+.navbar {
+  background: rgba(11, 19, 43, 0.9);
+}
 .navbar-brand {
-  font-weight: bold;
   font-size: 1.5rem;
 }
-
 .navbar-nav .nav-link {
-  font-size: 1.2rem;
-  transition: 0.3s ease;
+  color: #E4C580 !important;
+  transition: 0.3s;
 }
-
 .navbar-nav .nav-link:hover {
-  color: #f8d210 !important;
+  color: #18A999 !important;
 }
 
-/* Home Section */
+/* Home */
 #home {
   height: 100vh;
-  background: linear-gradient(to right, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, #0B132B, #1E215A);
   color: white;
 }
-
 #home h1 {
   font-size: 3rem;
-  font-weight: bold;
 }
-
-#home p {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
-
 .btn-primary {
-  background-color: #f8d210;
+  background: #18A999;
   border: none;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
-
 .btn-primary:hover {
-  background-color: #ffbf00;
+  background: #E4C580;
 }
 
-/* Contact Section */
+/* Contact */
 #contact {
+  background: #1E215A;
   padding: 50px;
-  background: #f4f4f4;
 }
-
 .contact-form {
   max-width: 500px;
   margin: auto;
 }
-
 form input, form textarea {
   margin-bottom: 15px;
   padding: 12px;
-  font-size: 1rem;
 }
-
 form button {
   width: 100%;
   padding: 10px;
   font-size: 1.2rem;
-  background: #333;
+  background: #18A999;
   color: white;
   border: none;
-  cursor: pointer;
   transition: 0.3s;
 }
-
 form button:hover {
-  background: #ff7b00;
+  background: #E4C580;
 }

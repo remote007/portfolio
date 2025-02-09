@@ -1,4 +1,4 @@
-// Scroll Reveal Animation
+// Scroll Reveal
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
 
