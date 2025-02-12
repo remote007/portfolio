@@ -1,8 +1,8 @@
 /* General */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #F6E6C2, #d6a502);
-  color: #5E4F31;
+  background: linear-gradient(to right, #e0bb63, #987500);
+  color: #201b10;
 }
 
 /* Grid Layout */
@@ -48,8 +48,18 @@ body {
   border-radius: 10px;
 }
 
-.collapse , .navbar-collapse,.navbar-nav,.nav-item{
+#navbarNav,.collapse , .navbar-collapse,.navbar-nav,.nav-item{
   color: black;
   justify-content: center;
   text-align: center;
+  margin: auto;
+  gap: 65px;
+  margin-bottom: 10px;
+  font-size: larger;
+  font: bolder;
+}
+
+.container{
+margin:auto ;
+margin-bottom: 22px;
 }
