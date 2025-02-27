@@ -1,50 +1,41 @@
-// Smooth Scrolling for Navbar Links
-// document.querySelectorAll('.nav-link').forEach(anchor => {
-//     anchor.addEventListener('click', function(e) {
-//         e.preventDefault();
-//         const targetId = this.getAttribute('href').substring(1);
-//         document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-//     });
-// });
 
 document.querySelectorAll('.nav-link').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
-        const navbarHeight = document.querySelector('.navbar').offsetHeight;
-        
+        const navbar = document.querySelector('.navbar');
+        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+        const extraOffset = 55; // Additional offset to ensure visibility
+
         window.scrollTo({
-            top: targetElement.offsetTop - navbarHeight - 20, // Offset to avoid overlap
+            top: targetElement.offsetTop - navbarHeight - extraOffset,
             behavior: 'smooth'
         });
     });
 });
 
-// Fun Animation on Scroll (Fade-in Effect)
+
+// Unified Observer for Scroll Animations
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('animate__fadeInUp');
+            entry.target.classList.add('visible', 'animate__fadeInUp');
         }
     });
 }, { threshold: 0.2 });
 
-document.querySelectorAll('.grid-container div').forEach(card => {
-    observer.observe(card);
+// Apply observer to all relevant elements
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelectorAll(".grid-container, .skill-card, .experience-card, .project-card, .contact-card").forEach(element => {
+        observer.observe(element);
+    });
 });
 
 // Interactive Hover Effect for Cards
-document.querySelectorAll('.skill-card, .experience-card, .project-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'scale(1.05)';
-    });
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'scale(1)';
-    });
+document.querySelectorAll('.skill-card, .project-card').forEach(card => {
+    card.addEventListener('mouseenter', () => card.style.transform = 'scale(1.05)');
+    card.addEventListener('mouseleave', () => card.style.transform = 'scale(1)');
 });
 
-// Modal Open Animation
-document.getElementById('hireModal').addEventListener('show.bs.modal', () => {
-    document.querySelector('.modal-content').classList.add('animate__zoomIn');
-});

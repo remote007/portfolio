@@ -10,6 +10,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- GSAP for Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+ 
+    // Reveal Sections on Scroll
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+});
+</script>
+
 </head>
 <body>
 
@@ -18,7 +38,6 @@
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
@@ -29,28 +48,24 @@
         </div>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="d-flex align-items-center text-center">
-        <div class="container">
-            <h1 class="animate__animated animate__fadeInDown">Hi, I'm <span class="highlight">Padmini Rai</span></h1>
-            <p class="animate__animated animate__fadeInUp">Full Stack Web Developer | Data Engineer</p>
-        </div>
-    </section>
-
     <!-- About Section -->
-    <section id="about" class="glass-card">
-        <div class="container text-center">
-            <h2>About Me</h2>
-            <p>Full Stack Developer skilled in building secure, scalable web applications. Passionate about RESTful APIs, database optimization, and leveraging AI in development.</p>
+    <section id="about" class="container">
+        <h1>About Me</h1>
+        <div class="grid-containe">
+        <div class="about-card">
+            <h3 class="animate__animated animate__fadeInDown">Hi, I'm <span class="highlight">Padmini Rai</span>  <i class="fa-solid fa-hand"></i> </h3>
+            <p class="animate__animated animate__fadeInUp">Full Stack Web Developer | Data Engineer <i class="fa-solid fa-laptop-code"></i></p>
+            <p>◉ I'm skilled in building secure, scalable web applications. <br>
+               ◉Passionate about RESTful APIs, database optimization, and leveraging AI in development.</p>
+        </div>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="container">
-        <h2>Technical Skills</h2>
+        <h1>Technical Skills</h1>
         <div class="grid-container">
-            <div class="skill-card"><i class="fab fa-html5"></i> HTML5</div>
-            <div class="skill-card"><i class="fab fa-css3-alt"></i> CSS3</div>
+            <div class="skill-card"><i class="fab fa-html5"></i> HTML5 / <i class="fab fa-css3-alt"></i> CSS3</div>
             <div class="skill-card"><i class="fab fa-bootstrap"></i> Bootstrap</div>
             <div class="skill-card"><i class="fab fa-js-square"></i> JavaScript</div>
             <div class="skill-card"><i class="fas fa-database"></i> MongoDB</div>
@@ -68,34 +83,47 @@
 
     <!-- Experience Section -->
     <section id="experience" class="container">
-        <h2>Experience</h2>
+        <h1>Experience</h1>
         <div class="grid-container">
             <div class="experience-card">
+                <div class="logo-container">
+                    <img src="assets/cisco-logo.png" alt="Cisco Logo">
+                </div>
                 <h4>Cisco</h4>
                 <p>Consulting Engineer (Backend Development + Data Eng.)</p>
                 <p>Aug 2022 - Nov 2023</p>
             </div>
             <div class="experience-card">
+                <div class="logo-container">
+                    <img src="assets/iit-delhi-logo.png" alt="IIT Delhi Logo">
+                </div>
                 <h4>IIT Delhi</h4>
                 <p>Internship (Research Analyst)</p>
                 <p>May 2021 - June 2021</p>
             </div>
             <div class="experience-card">
+                <div class="logo-container">
+                    <img src="assets/cris-logo.png" alt="CRIS Logo">
+                </div>
                 <h4>CRIS (DLW)</h4>
                 <p>Software Development Intern</p>
                 <p>June 2020 - Dec 2020</p>
             </div>
             <div class="experience-card">
-              <h4>IIT BHU</h4>
-              <p>Research Intern</p>
-              <p>May 2018 - July 2018</p>
-          </div>
+                <div class="logo-container">
+                    <img src="assets/iit-bhu-logo.png" alt="IIT BHU Logo">
+                </div>
+                <h4>IIT BHU</h4>
+                <p>Research Intern</p>
+                <p>May 2018 - July 2018</p>
+            </div>
         </div>
     </section>
+    
 
     <!-- Projects Section -->
     <section id="projects" class="container">
-        <h2>Projects</h2>
+        <h1>Projects</h1>
         <div class="grid-container">
             <div class="project-card">
                 <h4>Casserole Co.</h4>
@@ -114,7 +142,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="container">
-        <h2>Contact Me</h2>
+        <h1>Contact Me</h1>
             <div class="grid-container">
                 <div class="contact-card">
                     <p>Email: <a href="mailto:pmnrai2020@gmail.com">pmnrai2020@gmail.com</a></p>
