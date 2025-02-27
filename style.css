@@ -340,6 +340,11 @@ i{
     }
 }
 
+.project-card h2{
+    font-size: xx-large ;
+    font-family: sans-serif ;
+}
+
 .project-card a{
     color: #201b10;
     font-size: medium;
