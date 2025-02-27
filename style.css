@@ -66,6 +66,7 @@ h1{
   position: relative;
   overflow: hidden;
   padding-bottom: 10px;
+  font-size: x-large;
 }
 
 /* Interactive Neon Glow Effect */
@@ -90,6 +91,10 @@ h1{
 
 .about-card:hover::before,.skill-card:hover::before, .experience-card:hover::before, .project-card:hover::before, .contact-card:hover::before {
   opacity: 1;
+}
+
+.skill-card{
+    font-family: cursive;
 }
 
 /* Floating Navbar with Elegant Glow */
@@ -191,7 +196,7 @@ section.visible {
 
 img{
     object-fit: contain;
-    width: 98%;
+    /* width: 98%; */
     height: 90%;
 } 
 
@@ -209,3 +214,66 @@ margin: 0 auto 15px auto;
 transition: 0.3s ease-in-out;
 }
 
+.experience-card h6{
+    font-style: italic;
+}
+
+.experience-card h4{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+}
+
+.experience-card h2{
+    font-family:fantasy;
+    font:bold;
+}
+
+@keyframes halfSpinDance {
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(30deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+  
+.dance-animation {
+    display: inline-block;
+    animation: halfSpinDance 1.5s ease-in-out infinite;
+    transform-origin: center;
+  }
+  
+  @keyframes waveHand {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(15deg); }
+    80% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+.hi-animation {
+    display: inline-block;
+    animation: waveHand 1.5s ease-in-out infinite;
+    transform-origin: center bottom;
+  }
+  
+.about-card h3{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.about-card h4{
+    font-family: cursive;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 
+    0 0 30px rgba(255, 185, 0, 0.6), 
+    0 0 45px rgba(255, 165, 0, 0.4);
+}
+
+i{
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 
+    0 0 30px rgba(255, 185, 0, 0.6), 
+    0 0 45px rgba(255, 165, 0, 0.4);
+}
