@@ -404,3 +404,8 @@ footer li{
 .profile-image-btn{
     font-size: xx-large !important;
 }
+
+section i{
+  align-items: center;
+  justify-content: center;
+}
