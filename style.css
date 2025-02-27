@@ -54,7 +54,7 @@ h1{
 
 /* Glassmorphism Cards */
 .about-card,.skill-card, .experience-card, .project-card, .contact-card {
-  background: rgba(233, 204, 108, 0.961);
+  background: rgba(233, 204, 108, 0.961) ;
   padding: 20px;
   border-radius: 15px;
   text-align: center;
@@ -67,10 +67,11 @@ h1{
   overflow: hidden;
   padding-bottom: 10px;
   font-size: x-large;
+  
 }
 
 /* Interactive Neon Glow Effect */
-.about-cardd:hover,.skill-card:hover, .experience-card:hover, .project-card:hover, .contact-card:hover {
+.about-card:hover,.skill-card:hover, .experience-card:hover, .project-card:hover, .contact-card:hover {
   box-shadow: 0 0 25px rgba(255, 223, 90, 0.8);
   transform: scale(1.05);
 }
@@ -276,4 +277,57 @@ i{
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 
     0 0 30px rgba(255, 185, 0, 0.6), 
     0 0 45px rgba(255, 165, 0, 0.4);
+}
+
+/* Profile Grid Layout */
+.about-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto; /* Profile image takes 1 part, text takes 2 */
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+/* Profile Image Styling */
+.profile-image {
+    display: flex;
+    justify-content: left;
+    padding-left: 55px;
+    padding-top: 10px;
+    width: 450px;
+
+}
+
+.profile-image img {
+    width: 440px; /* Adjust size as needed */
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8),
+                0 0 40px rgba(255, 185, 0, 0.6),
+                0 0 55px rgba(255, 165, 0, 0.4);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-image img:hover {
+    transform: scale(1.05);
+}
+
+.about-card{
+    justify-content: left;
+    width: 600px;
+    grid-column: 4/5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr; /* Stacks image and text on small screens */
+        text-align: center;
+    }
+
+    .profile-image img {
+        width: 200px;
+        height: 200px;
+    }
 }
