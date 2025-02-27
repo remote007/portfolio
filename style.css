@@ -15,7 +15,7 @@ body {
 }
 
 /* Cards */
-.skill-card, .experience-card, .project-card {
+.skill-card, .experience-card, .project-card, .contact-card {
   background: rgba(255, 255, 255, 0.2);
   padding: 20px;
   border-radius: 10px;
@@ -23,8 +23,9 @@ body {
   backdrop-filter: blur(10px);
   box-shadow: 0 0 10px #E3B23C;
   transition: 0.3s;
+  font-size: larger;
 }
-.skill-card:hover, .experience-card:hover, .project-card:hover {
+.skill-card:hover, .experience-card:hover, .project-card:hover ,.contact-card:hover{
   box-shadow: 0 0 15px #FFD700;
 }
 

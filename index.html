@@ -8,7 +8,7 @@
     <!-- Bootstrap & Animate.css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -49,18 +49,22 @@
     <section id="skills" class="container">
         <h2>Technical Skills</h2>
         <div class="grid-container">
-            <div class="skill-card">HTML5</div>
-            <div class="skill-card">CSS3</div>
-            <div class="skill-card">Bootstrap</div>
-            <div class="skill-card">JavaScript</div>
-            <div class="skill-card">MongoDB</div>
-            <div class="skill-card">Node.js</div>
-            <div class="skill-card">Express.js</div>
-            <div class="skill-card">Django</div>
-            <div class="skill-card">Python</div>
-            <div class="skill-card">MySQL</div>
+            <div class="skill-card"><i class="fab fa-html5"></i> HTML5</div>
+            <div class="skill-card"><i class="fab fa-css3-alt"></i> CSS3</div>
+            <div class="skill-card"><i class="fab fa-bootstrap"></i> Bootstrap</div>
+            <div class="skill-card"><i class="fab fa-js-square"></i> JavaScript</div>
+            <div class="skill-card"><i class="fas fa-database"></i> MongoDB</div>
+            <div class="skill-card"><i class="fab fa-node-js"></i> Node.js</div>
+            <div class="skill-card"><i class="fas fa-server"></i> Express.js</div>
+            <div class="skill-card"><i class="fab fa-python"></i> Django</div>
+            <div class="skill-card"><i class="fab fa-python"></i> Python</div>
+            <div class="skill-card"><i class="fas fa-database"></i> MySQL</div>
+            <div class="skill-card"><i class="fas fa-code"></i> VBA</div>
+            <div class="skill-card"><i class="fab fa-docker"></i> Docker</div>
+            <div class="skill-card"><i class="fas fa-cubes"></i> Kubernetes</div>
         </div>
     </section>
+
 
     <!-- Experience Section -->
     <section id="experience" class="container">
@@ -96,28 +100,30 @@
             <div class="project-card">
                 <h4>Casserole Co.</h4>
                 <p>Tech: JavaScript, Node.js, RESTful APIs</p>
+                <a href="https://casserole-co.netlify.app/">Live Demo</a>
+                <a href="https://github.com/remote007/casserole_co/tree/main">GitHub Repo</a>
+            </div>
+            <div class="project-card">
+                <h4>Shopsy</h4>
+                <p>Tech: Express, Node.js, MongoDB</p>
                 <a href="#">Live Demo</a>
                 <a href="#">GitHub Repo</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Modal -->
-    <div class="modal fade" id="hireModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content glass-modal">
-                <div class="modal-header">
-                    <h5 class="modal-title">Contact Me</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+            <div class="grid-container">
+                <div class="contact-card">
+                    <p>Email: <a href="mailto:pmnrai2020@gmail.com">pmnrai2020@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+917734807973">+91 7734807973</a></p>
+                    <p>Location: Varanasi, India</p>
                 </div>
-                <div class="modal-body">
-                    <p>Email: pmnrai2020@gmail.com</p>
-                    <p>Phone: 7734807973</p>
-                    <p>Location: Varanasi</p>
-                </div>
-            </div>
-        </div>
-    </div>
+            </div> 
+    </section>
+
 
     <script src="script.js"></script>
 </body>
