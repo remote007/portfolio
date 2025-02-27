@@ -366,6 +366,9 @@ i{
     height: 190px;
     padding: auto;
     margin: auto;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 
+    0 0 30px rgba(255, 185, 0, 0.6), 
+    0 0 45px rgba(255, 165, 0, 0.4);
 }
 
 .project_img{
@@ -394,4 +397,8 @@ footer ul{
 footer li{
   text-decoration: none;
   list-style: none;
+}
+
+.profile-image-btn{
+    font-size: xx-large !important;
 }
