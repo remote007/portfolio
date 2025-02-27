@@ -3,6 +3,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(to right, #e0bb63, #987500);
   color: #201b10;
+  /* margin-top: 15px; */
 }
 
 /* Grid Layout */
@@ -53,13 +54,45 @@ body {
   justify-content: center;
   text-align: center;
   margin: auto;
-  gap: 65px;
+  gap: 55px;
   margin-bottom: 10px;
   font-size: larger;
   font: bolder;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-size: large;
+  margin-top: 15px;
 }
+
+.navbar-nav{
+  position:fixed;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px) !important;
+  z-index: 1000;
+}
+
+.navbar .nav-link {
+  color: black !important;
+  font-weight: bold;
+}
+
+.navbar .nav-link:hover {
+  color: #444 !important; /* Slightly darker shade on hover */
+}
+
+
+#home{
+  margin-top: 45px;
+}
+
+section {
+  scroll-margin-top: 80px; /* Adjust based on navbar height */
+  padding-top: 20px;
+}
+
 
 .container{
 margin:auto ;
 margin-bottom: 22px;
-}
+}  
