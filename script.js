@@ -1,6 +1,8 @@
 
 document.querySelectorAll('.nav-link').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+        if(this.id == "toggle-div")
+            return;
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
@@ -32,25 +34,28 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(element);
     });
 
-    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const toggleSwitch = document.getElementById("dark-mode-toggle");
     const body = document.body;
+    const modeText = document.getElementById("mode-text");
   
-    // Check localStorage for dark mode preference
+    // Check localStorage for saved theme
     if (localStorage.getItem("darkMode") === "enabled") {
       body.classList.add("dark-mode");
+      toggleSwitch.checked = true;
+      modeText.textContent = "Switch to Light Mode";
     }
   
-    // Toggle dark mode on button click
-    darkModeToggle.addEventListener("click", function () {
+    // Toggle dark mode on switch change
+    toggleSwitch.addEventListener("change", () => {
       body.classList.toggle("dark-mode");
   
-      // Save preference in localStorage
+      // Update text and save preference
       if (body.classList.contains("dark-mode")) {
+        modeText.textContent = "Switch to Light Mode";
         localStorage.setItem("darkMode", "enabled");
-        darkModeToggle.textContent = "Light Mode";
       } else {
+        modeText.textContent = "Switch to Dark Mode";
         localStorage.setItem("darkMode", "disabled");
-        darkModeToggle.textContent = "Dark Mode";
       }
     });
 

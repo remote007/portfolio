@@ -43,7 +43,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     <li class="nav-item"><a class="nav-link" href="#experience"><i class="fa-solid fa-briefcase"></i> Experiences</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
-                    <li><button id="dark-mode-toggle" style="position: fixed; top: 20px; right: 20px; padding: 10px 15px; font-size: 18px; background: #FFD700; border: none; cursor: pointer; z-index: 1001;">Dark Mode</button></li>
+                    <!-- <li><button id="dark-mode-toggle" style="position: fixed; top: 20px; right: 20px; padding: 10px 15px; font-size: 18px; background: #FFD700; border: none; cursor: pointer; z-index: 1001;">Dark Mode</button></li> -->
+                    <li class="nav-item">
+                      <div class="mode-toggle nav-link" id="toggle-div">
+                        <label class="switch">
+                            <input type="checkbox" id="dark-mode-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span id="mode-text">Switch to Dark Mode</span>
+                      </div>
+                    </li>
                 </ul>
             </div>
         </div>
