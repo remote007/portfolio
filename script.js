@@ -31,6 +31,29 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".grid-container, .skill-card, .experience-card, .project-card, .contact-card").forEach(element => {
         observer.observe(element);
     });
+
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const body = document.body;
+  
+    // Check localStorage for dark mode preference
+    if (localStorage.getItem("darkMode") === "enabled") {
+      body.classList.add("dark-mode");
+    }
+  
+    // Toggle dark mode on button click
+    darkModeToggle.addEventListener("click", function () {
+      body.classList.toggle("dark-mode");
+  
+      // Save preference in localStorage
+      if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "enabled");
+        darkModeToggle.textContent = "Light Mode";
+      } else {
+        localStorage.setItem("darkMode", "disabled");
+        darkModeToggle.textContent = "Dark Mode";
+      }
+    });
+
 });
 
 // Interactive Hover Effect for Cards

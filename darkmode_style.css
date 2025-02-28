@@ -1,0 +1,63 @@
+/* Dark Mode Styles */
+.dark-mode {
+    background: #1a1a1a;
+    color: #f1f1f1;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 
+                0 0 30px rgba(255, 255, 255, 0.2), 
+                0 0 45px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Dark Mode Navbar */
+  .dark-mode .navbar-nav {
+    background: rgba(50, 50, 50, 0.8);
+    box-shadow: 0 4px 20px rgba(255, 223, 90, 0.5);
+  }
+  
+  .dark-mode .navbar .nav-link {
+    color: #f1f1f1 !important;
+    text-shadow: 0px 0px 10px rgba(255, 223, 90, 0.8);
+  }
+  
+  .dark-mode .navbar .nav-link.active {
+    color: #FFD700 !important;
+    font-weight: bold;
+  }
+  
+  /* Dark Mode Cards */
+  .dark-mode .about-card,
+  .dark-mode .skill-card,
+  .dark-mode .experience-card,
+  .dark-mode .project-card,
+  .dark-mode .contact-card {
+    background: rgba(50, 50, 50, 0.9);
+    color: #f1f1f1;
+    box-shadow: 0 0 25px rgba(255, 223, 90, 0.8);
+  }
+  
+  /* Dark Mode Footer */
+  .dark-mode footer ul {
+    background: rgba(50, 50, 50, 0.9);
+    color: #f1f1f1;
+  }
+  
+  /* Dark Mode Project Cards */
+  .dark-mode .project-card a,
+  .dark-mode .project-card p,
+  .dark-mode .project-card u {
+    color: #f1f1f1;
+  }
+  
+  /* Dark Mode Logo Container */
+  .dark-mode .logo-container {
+    background: rgba(50, 50, 50, 0.9);
+  }
+
+  .dark-mode .profile-image img {
+        background: rgba(50, 50, 50, 0.9);
+    }
+  .dark-mode section{
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 
+    0 0 30px rgba(255, 185, 0, 0.6), 
+    0 0 45px rgba(255, 165, 0, 0.4);
+  }
