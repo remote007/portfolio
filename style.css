@@ -5,6 +5,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   background: #bc9000;
+  /* background: rgba(221, 185, 26, 0.731) ; */
   color: #201b10;
   overflow-x: hidden;
   transition: background 0.5s ease-in-out;
@@ -12,7 +13,6 @@ body {
               0 0 30px rgba(255, 255, 255, 0.6), 
               0 0 45px rgba(255, 255, 255, 0.4); 
   padding-top: 25px;
-  /* width: 90%; */
 }
 
 h1{
@@ -76,7 +76,7 @@ h1{
 }
 
 /* Hover Shine Effect */
-.about-card::before,.skill-card::before, .experience-card::before, .project-card::before, .contact-card::before {
+.profile-image-btn::before,.skill-card::before,.project-card::before, .contact-card::before {
   content: "";
   position: absolute;
   top: -50%;
@@ -90,7 +90,7 @@ h1{
   pointer-events: none;
 }
 
-.about-card::before, .experience-card::before, .project-card::before {
+.project-card::before {
   opacity: 0;
 }
 
@@ -283,18 +283,17 @@ i{
     padding-left: 55px;
     padding-top: 10px;
     width: 450px;
-
 }
 
 .profile-image img {
-    width: 440px; /* Adjust size as needed */
-    height: 300px;
-    border-radius: 50%;
-    object-fit: contain;
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8),
-                0 0 40px rgba(255, 185, 0, 0.6),
-                0 0 55px rgba(255, 165, 0, 0.4);
-    transition: transform 0.3s ease-in-out;
+  width: 440px; /* Adjust size as needed */
+  height: 300px;
+  border-radius: 50%;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.8),
+              0 0 40px rgba(255, 185, 0, 0.6),
+              0 0 55px rgba(255, 165, 0, 0.4);
 }
 
 .profile-image img:hover {
@@ -362,8 +361,8 @@ i{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 15px;
+    height: 290px !important;
 }
-
 
 footer ul{
     background: rgba(233, 204, 108, 0.961) ;
@@ -390,7 +389,7 @@ footer li{
 }
 
 .project-card a{
-  margin-top: 25px;
+  /* margin-top: 25px; */
   margin-right: 45px;
   background-color: #201b10;
   color: white;
@@ -415,29 +414,59 @@ footer li{
   object-fit: contain;
   opacity: 0;
   transform: scale(1);
-  transition: opacity 1s ease-in-out;
+  transition: opacity 3s ease-out;
 }
 
-/* .glitch {
-  animation: glitch-animation 0.5s steps(10, end) infinite alternate;
-} */
-
 @keyframes glitch {
-  0% { transform: scale(1.05); filter: contrast(1.2) brightness(1.2); }
-  20% { transform: translateX(5px) skewX(5deg); }
-  40% { filter: hue-rotate(30deg) contrast(1.5); }
-  50% { transform: translateX(-5px) skewX(-5deg); }
-  60% { filter: grayscale(1) blur(2px); }
-  80% { opacity: 1; transform: scale(1); filter: contrast(1); }
+  0% { filter: contrast(1.2) brightness(1.2); }
+  20% { transform: translateX(3px) skewX(3deg); }
+  40% { filter: hue-rotate(20deg) contrast(1.4); }
+  50% { transform: translateX(-3px) skewX(-3deg); }
+  60% { filter: grayscale(1) blur(1.5px); }
+  80% { opacity: 1; filter: contrast(1); }
   100% { opacity: 1; }
 }
 
 /* Glitch Lines Effect */
 @keyframes glitchEffect {
   0% { clip-path: inset(0 0 0 0); }
-  25% { clip-path: inset(10px 0 30px 0); }
-  50% { clip-path: inset(20px 0 50px 0); }
-  75% { clip-path: inset(30px 0 10px 0); }
+  20% { clip-path: inset(5px 0 20px 0); }
+  50% { clip-path: inset(15px 0 40px 0); }
+  80% { clip-path: inset(10px 0 5px 0); }
   100% { clip-path: inset(0 0 0 0); }
+}
+
+
+.about-card,.experience-card{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.about-card::before ,.experience-card::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 20%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 80%
+  );
+  transform: skewX(-25deg);
+  animation: shine-animation 5s ease-out infinite;
+}
+
+
+@keyframes shine-animation {
+  0% {
+      left: -60%;
+  }
+  100% {
+      left: 120%;
+  }
 }
 

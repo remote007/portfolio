@@ -8,7 +8,7 @@ document.querySelectorAll('.nav-link').forEach(anchor => {
         const targetElement = document.getElementById(targetId);
         const navbar = document.querySelector('.navbar');
         const navbarHeight = navbar ? navbar.offsetHeight : 0;
-        const extraOffset = 55; // Additional offset to ensure visibility
+        const extraOffset = 45; // Additional offset to ensure visibility
 
         window.scrollTo({
             top: targetElement.offsetTop - navbarHeight - extraOffset,
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 img.style.animation = "none"; // Remove animation
             });
             images[current].style.opacity = "1";
-            images[current].style.animation = "glitch 1s linear, glitchEffect 0.3s infinite alternate"; // Glitch effect
+            images[current].style.animation = "glitch 1.5s linear infinite, glitchEffect 0.3s infinite alternate;"; // Glitch effect
 
             current = (current + 1) % images.length;
         }
@@ -111,4 +111,5 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener("resize", checkVisibility);
         checkVisibility();
     });
+    
 });
