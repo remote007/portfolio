@@ -18,22 +18,20 @@ document.querySelectorAll('.nav-link').forEach(anchor => {
 });
 
 
-// Unified Observer for Scroll Animations
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible', 'animate__fadeInUp');
-        }
-    });
-}, { threshold: 0.2 });
+// // Unified Observer for Scroll Animations
+// const observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.classList.add('visible');
+//         }
+//     });
+// }, { threshold: 0.2 });
 
 // Apply observer to all relevant elements
 document.addEventListener("DOMContentLoaded", function () {
 
-    document.querySelectorAll(".grid-container, .skill-card, .experience-card, .project-card, .contact-card").forEach(element => {
-        observer.observe(element);
-    });
-
+    // document.getElementById("contact-card-p").removeAttribute("content");
+    
     const toggleSwitch = document.getElementById("dark-mode-toggle");
     const body = document.body;
     const modeText = document.getElementById("mode-text");
@@ -66,4 +64,3 @@ document.querySelectorAll('.skill-card, .project-card').forEach(card => {
     card.addEventListener('mouseenter', () => card.style.transform = 'scale(1.05)');
     card.addEventListener('mouseleave', () => card.style.transform = 'scale(1)');
 });
-
