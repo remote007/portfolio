@@ -166,6 +166,13 @@ h1{
   box-shadow: 0px 0px 20px rgba(255, 223, 90, 1);
 }
 
+.contact-card a{
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: monospace;
+  font-style: italic;
+}
+
 /* Section Spacing */
 section {
   scroll-margin-top: 80px;
