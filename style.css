@@ -457,7 +457,7 @@ footer li{
       rgba(255, 255, 255, 0) 80%
   );
   transform: skewX(-25deg);
-  animation: shine-animation 5s ease-out infinite;
+  animation: shine-animation 3.5s ease-out infinite;
 }
 
 
@@ -469,4 +469,3 @@ footer li{
       left: 120%;
   }
 }
-
