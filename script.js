@@ -17,17 +17,6 @@ document.querySelectorAll('.nav-link').forEach(anchor => {
     });
 });
 
-
-// // Unified Observer for Scroll Animations
-// const observer = new IntersectionObserver(entries => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add('visible');
-//         }
-//     });
-// }, { threshold: 0.2 });
-
-// Apply observer to all relevant elements
 document.addEventListener("DOMContentLoaded", function () {
 
     // document.getElementById("contact-card-p").removeAttribute("content");
@@ -63,4 +52,63 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelectorAll('.skill-card, .project-card').forEach(card => {
     card.addEventListener('mouseenter', () => card.style.transform = 'scale(1.05)');
     card.addEventListener('mouseleave', () => card.style.transform = 'scale(1)');
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const projectCards = document.querySelectorAll(".project-card");
+
+    projectCards.forEach((card) => {
+        const images = card.querySelectorAll(".project_img img");
+        
+        let current = 0;
+        let interval;
+        let userInteracted = false;
+
+        function showNextImage() {
+            images.forEach(img => {
+                img.style.opacity = "0";  // Hide all images
+                img.style.animation = "none"; // Remove animation
+            });
+            images[current].style.opacity = "1";
+            images[current].style.animation = "glitch 1s linear, glitchEffect 0.3s infinite alternate"; // Glitch effect
+
+            current = (current + 1) % images.length;
+        }
+
+        function startSlideshow() {
+            if (!interval) {
+                interval = setInterval(showNextImage, 4000);
+                showNextImage();
+            }
+        }
+
+        function stopSlideshow() {
+            clearInterval(interval);
+            interval = null;
+        }
+
+        function checkVisibility() {
+            const rect = card.getBoundingClientRect();
+            const inViewport = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+            if (inViewport) {
+                startSlideshow();
+            } else {
+                stopSlideshow();
+            }
+        }
+
+        function enableAudio() {
+            userInteracted = true;
+            document.removeEventListener("click", enableAudio);
+            document.removeEventListener("scroll", enableAudio);
+        }
+
+        document.addEventListener("click", enableAudio);
+        document.addEventListener("scroll", enableAudio);
+
+        window.addEventListener("scroll", checkVisibility);
+        window.addEventListener("resize", checkVisibility);
+        checkVisibility();
+    });
 });
