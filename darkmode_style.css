@@ -131,3 +131,7 @@ input:checked + .slider:before {
 .dark-mode .mode-toggle {
     color: white;
   }
+
+  .dark-mode .contact-card a {
+    text-shadow: 4px 4px 12px rgba(255, 223, 90, 0.8);
+  }
