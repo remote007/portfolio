@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-    
+
 });
 
 // Interactive Hover Effect for Cards
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 img.style.animation = "none"; // Remove animation
             });
             images[current].style.opacity = "1";
-            images[current].style.animation = "glitch 1.5s linear infinite, glitchEffect 0.3s infinite alternate;"; // Glitch effect
+            images[current].style.animation = "glitch 1s linear infinite, glitchEffect 0.8s infinite alternate;"; // Glitch effect
 
             current = (current + 1) % images.length;
         }
