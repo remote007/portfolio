@@ -18,34 +18,33 @@ document.querySelectorAll('.nav-link').forEach(anchor => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    // document.getElementById("contact-card-p").removeAttribute("content");
     
     const toggleSwitch = document.getElementById("dark-mode-toggle");
     const body = document.body;
     const modeText = document.getElementById("mode-text");
   
-    // Check localStorage for saved theme
-    if (localStorage.getItem("darkMode") === "enabled") {
-      body.classList.add("dark-mode");
-      toggleSwitch.checked = true;
-      modeText.textContent = "Switch to Light Mode";
+    if (localStorage.getItem("darkMode") !== "disabled") {
+        body.classList.add("dark-mode");
+        if (toggleSwitch) toggleSwitch.checked = true;
+        if (modeText) modeText.textContent = "Switch to Light Mode";
+    } else {
+        if (modeText) modeText.textContent = "Switch to Dark Mode";
     }
   
-    // Toggle dark mode on switch change
-    toggleSwitch.addEventListener("change", () => {
-      body.classList.toggle("dark-mode");
-  
-      // Update text and save preference
-      if (body.classList.contains("dark-mode")) {
-        modeText.textContent = "Switch to Light Mode";
-        localStorage.setItem("darkMode", "enabled");
-      } else {
-        modeText.textContent = "Switch to Dark Mode";
-        localStorage.setItem("darkMode", "disabled");
-      }
-    });
+    if (toggleSwitch) {
+        toggleSwitch.addEventListener("change", () => {
+            body.classList.toggle("dark-mode");
 
+            if (body.classList.contains("dark-mode")) {
+                if (modeText) modeText.textContent = "Switch to Light Mode";
+                localStorage.setItem("darkMode", "enabled");
+            } else {
+                if (modeText) modeText.textContent = "Switch to Dark Mode";
+                localStorage.setItem("darkMode", "disabled");
+            }
+        });
+    }
+    
 });
 
 // Interactive Hover Effect for Cards
