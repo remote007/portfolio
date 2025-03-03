@@ -67,12 +67,78 @@ document.addEventListener("DOMContentLoaded", function () {
             updateContactLinks(isDarkMode);
         });
     }
+
 });
 
 // Interactive Hover Effect for Cards
 document.querySelectorAll('.skill-card, .project-card').forEach(card => {
     card.addEventListener('mouseenter', () => card.style.transform = 'scale(1.05)');
     card.addEventListener('mouseleave', () => card.style.transform = 'scale(1)');
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    var contactTexts = [
+        '◉ <i class="fa-solid fa-envelope-open-text"></i> Email: <a href="mailto:pmnrai2020@gmail.com" target="_blank">pmnrai2020@gmail.com</a>',
+        '◉ <i class="fa-solid fa-phone-volume"></i> Phone: <a href="tel:+917734807973" target="_blank">7734807973</a>',
+        '◉ <i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/remote007/" target="_blank">https://www.linkedin.com/in/remote007/</a>',
+        '◉ <i class="fa-solid fa-location-dot"></i> Location: <a href="#">Varanasi, India</a>'
+    ];
+
+    var iSpeed = 50; // Typing speed per character
+    var lineDelay = 500; // Delay before next line starts
+    var iIndex = 0; // Current line index
+    var iTextPos = 0; // Current character position
+    var contactCard = document.querySelector(".contact-card");
+    var isTyping = false;
+
+    function typewriter() {
+        if (iIndex >= contactTexts.length) return; // Stop if all lines are printed
+
+        let pTag = document.createElement("p");
+        contactCard.appendChild(pTag);
+
+        let rawText = contactTexts[iIndex]; // Raw text without HTML
+        let tempText = document.createElement("div"); // Temp container for HTML parsing
+        tempText.innerHTML = rawText;
+        let plainText = tempText.textContent; // Extract only visible text (no &nbsp; issues)
+
+        function typeLine() {
+            if (iTextPos < plainText.length) {
+                pTag.textContent = plainText.substring(0, iTextPos + 1) + "_"; // Show blinking cursor
+                iTextPos++;
+                setTimeout(typeLine, iSpeed);
+            } else {
+                pTag.innerHTML = rawText; // Apply full HTML only after finishing
+                iIndex++;
+                iTextPos = 0;
+
+                // Scroll slightly after each line
+                window.scrollBy({
+                    top: 60, // Adjust scrolling distance
+                    behavior: "smooth"
+                });
+
+                if (iIndex < contactTexts.length) {
+                    setTimeout(typewriter, lineDelay);
+                }
+            }
+        }
+
+        typeLine();
+    }
+
+    function checkVisibility() {
+        var contactSection = document.getElementById("contact");
+        var rect = contactSection.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight && !isTyping) {
+            isTyping = true;
+            typewriter();
+        }
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    window.addEventListener("resize", checkVisibility);
+    checkVisibility();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
