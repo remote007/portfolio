@@ -82,59 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
     checkVisibility();
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     const toggleSwitch = document.getElementById("dark-mode-toggle");
-//     const body = document.body;
-//     const modeText = document.getElementById("mode-text");
-  
-//     // Function to update contact card links based on dark mode
-//     function updateContactLinks(isDarkMode) {
-//         document.querySelectorAll(".contact-card a").forEach(link => {
-//             if (isDarkMode) {
-//                 link.style.textDecoration = "none";
-//                 link.style.color = "whitesmoke";
-//                 link.style.textShadow = "0px 2px 12px rgba(255, 223, 90, 0.8)";
-//             } else {
-//                 link.style.textShadow = "0px 4px 12px black";
-//             }
-//         });
-//     }
-
-//     // Check if dark mode was previously enabled
-//     const isDarkModeEnabled = localStorage.getItem("darkMode") !== "disabled";
-    
-//     if (isDarkModeEnabled) {
-//         body.classList.add("dark-mode");
-//         if (toggleSwitch) toggleSwitch.checked = true;
-//         if (modeText) modeText.textContent = "Switch to Light Mode";
-//     } else {
-//         if (modeText) modeText.textContent = "Switch to Dark Mode";
-//     }
-
-//     // Apply the correct styles initially
-//     updateContactLinks(isDarkModeEnabled);
-
-//     if (toggleSwitch) {
-//         toggleSwitch.addEventListener("change", () => {
-//             body.classList.toggle("dark-mode");
-//             const isDarkMode = body.classList.contains("dark-mode");
-
-//             // Update mode text
-//             if (isDarkMode) {
-//                 if (modeText) modeText.textContent = "Switch to Light Mode";
-//                 localStorage.setItem("darkMode", "enabled");
-//             } else {
-//                 if (modeText) modeText.textContent = "Switch to Dark Mode";
-//                 localStorage.setItem("darkMode", "disabled");
-//             }
-
-//             // Apply styles to contact card links
-//             updateContactLinks(isDarkMode);
-//         });
-//     }
-
-// });
-
 document.addEventListener("DOMContentLoaded", function () {
     const body = document.body;
     const modeIcon = document.getElementById("mode-icon"); // Sun/Moon icon
